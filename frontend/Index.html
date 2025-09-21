@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Support Assistant - AWS Chatbot Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <h1>🤖 IT Support Assistant</h1>
+                        <span class="subtitle">Powered by AWS Lex</span>
+                    </div>
+                    <div class="system-status">
+                        <span class="status-label">System Status</span>
+                        <div class="status-indicators">
+                            <span class="status-item" data-service="email">📧 Email</span>
+                            <span class="status-item" data-service="network">📶 Network</span>
+                            <span class="status-item" data-service="servers">🖥️ Servers</span>
+                            <span class="status-item" data-service="phones">📞 Phones</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-container container">
+            <div class="chat-layout">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-section">
+                        <h3>Quick Actions</h3>
+                        <div class="quick-actions">
+                            <button class="btn btn--secondary quick-action-btn" data-intent="PasswordReset">
+                                🔐 Reset Password
+                            </button>
+                            <button class="btn btn--secondary quick-action-btn" data-intent="WiFiTroubleshooting">
+                                📶 WiFi Issues
+                            </button>
+                            <button class="btn btn--secondary quick-action-btn" data-intent="EmailAccess">
+                                📧 Email Problems
+                            </button>
+                            <button class="btn btn--secondary quick-action-btn" data-intent="EscalateToHuman">
+                                🙋 Speak to Agent
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Common FAQs</h3>
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <button class="faq-question">How do I reset my password?</button>
+                                <div class="faq-answer">Go to the login page, click 'Forgot Password', enter your username, and follow the email instructions.</div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">My WiFi isn't working</button>
+                                <div class="faq-answer">Try restarting your WiFi and Wifi adapter, forgetting and reconnecting to the network, or restarting your device and router.</div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">I can't access my email</button>
+                                <div class="faq-answer">Check your credentials, internet connection, and email server settings. Try accessing from a different device.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Settings</h3>
+                        <div class="demo-controls">
+                            <label class="form-label">
+                                <input type="checkbox" id="show-confidence" checked> Show Confidence Scores
+                            </label>
+                            <label class="form-label">
+                                <input type="checkbox" id="show-intent" checked> Show Intent Recognition
+                            </label>
+                            <label class="form-label">
+                                <input type="checkbox" id="typing-delay" checked> Typing Simulation
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Chat Interface -->
+                <main class="chat-container">
+                    <div class="chat-header">
+                        <h2>💬 Chat with IT Support Assistant</h2>
+                        <div class="chat-status">
+                            <span class="status--success">🟢 Online</span>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message bot-message">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <div class="message-text">👋 Hi! I'm your IT Support Assistant. I can help you with password resets, WiFi issues, email problems, and more. How can I assist you today?</div>
+                                <div class="message-meta">
+                                    <span class="message-time">Just now</span>
+                                    <span class="confidence-score">Confidence: 100%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="typing-indicator" id="typingIndicator">
+                        <div class="typing-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="typing-text">Assistant is typing...</span>
+                    </div>
+
+                    <div class="chat-input-container">
+                        <form class="chat-input-form" id="chatForm">
+                            <input type="text" id="chatInput" class="form-control chat-input" placeholder="Type your message here..." autocomplete="off">
+                            <button type="submit" class="btn btn--primary chat-send-btn">
+                                📤 Send
+                            </button>
+                        </form>
+                    </div>
+                </main>
+
+                <!-- Analytics Panel -->
+                <aside class="analytics-panel">
+                    <div class="sidebar-section">
+                        <h3>Meet our Bot, Rambo!!</h3>
+                        <div class="architecture-diagram">
+                            <img src="https://ai-chatbot-frontend-abhi.s3.us-east-1.amazonaws.com/AIbot/Rambo.gif" alt="AWS Chatbot Architecture" class="architecture-image">
+                        </div>
+                    </div>
+                    <div class="sidebar-section">
+                        <h3>Recent Issues</h3>
+                        <div class="intent-history" id="intentHistory">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>IT Support</h4>
+                        <p>📞 Call: +91 7090080896</p>
+                        <p>📧 Email: abhishekbagade15@gmail.com</p>
+                        <p>🕐 Hours: Mon-Fri 8AM-6PM</p>
+                        <p>💬 After Hours Chat: Available 24/7</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Emergency</h4>
+                        <p>🚨 Critical Issues Call</p>
+                        <p>    Police:    100</p>
+                        <p>    Fire:      101</p>
+                        <p>    Ambulance: 108</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 IT Support Assistant. Powered by AWS Lex, Lambda, DynamoDB & SES</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="appv2.js"></script>
+</body>
+</html>

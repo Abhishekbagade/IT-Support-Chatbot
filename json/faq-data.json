@@ -1,0 +1,22 @@
+[
+    {
+        "question": "PasswordReset",
+        "answer": "To reset your password, please visit our self-service portal at company.com/reset. You will need to enter your employee ID and answer your security questions."
+    },
+    {
+        "question": "WiFiTroubleshooting",
+        "answer": "If you're having WiFi issues, please try these steps:\n1. Restart your device.\n2. Turn your WiFi off and on again.\n3. Forget the 'Company-WiFi' network and reconnect.\n4. If the issue persists, visit the IT helpdesk on the 3rd floor."
+    },
+    {
+        "question": "EmailAccess",
+        "answer": "For email access problems, ensure you are using the correct login credentials (your full email address and network password). You can also try accessing your email via the web portal at mail.company.com."
+    },
+    {
+        "question": "My account is locked",
+        "answer": "Accounts automatically lock after 5 incorrect password attempts. Please wait 15 minutes for it to unlock automatically or use the password reset portal to unlock it sooner."
+    },
+    {
+        "question": "How do I request new software?",
+        "answer": "All software requests must be submitted through the IT Service Catalog. Please search for the application you need and submit a request form for approval."
+    }
+]
