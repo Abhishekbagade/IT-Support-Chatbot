@@ -20,14 +20,12 @@ The IT Support Chatbot is a **serverless, AI-powered support assistant** built o
 
 ## Architecture
 
-```mermaid
 graph TD
     A[User] -->|Chat Request| B[S3 Frontend]
     B --> C[Amazon Lex]
     C --> D[Lambda Backend]
     D --> E[DynamoDB - Ticket Storage]
     D --> F[SES - Email Notifications]
-```
 
 ---
 
@@ -82,12 +80,6 @@ IT-Support-Chatbot/
 * Reduced ticket resolution time with automated chatbot support.
 * Demonstrated integration of multiple AWS services into a cohesive serverless application.
 * Scalable design that can be extended with more intents, FAQs, and ticket workflows.
-
----
-
-## Screenshots
-
-*(Add screenshots of the chatbot UI and architecture diagram here)*
 
 ---
 
